@@ -12,6 +12,8 @@ var buildPackage = function(package, packages, buildCallback, clean, install, pu
                     } else {
                         console.log(`Skipping ${dependency} because it is already built.`);
                     }
+                } else {
+                    console.log(`Skipping ${dependency} because it is not one of ours.`);
                 }
             });
         }

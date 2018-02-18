@@ -30,11 +30,12 @@ process.argv.forEach(function (val, index, array) {
     }
     if (val.toLowerCase() == '-help') {
         console.log(`options:
-            -package=sample-package (optional, builds sample-package and it\'s dependencies)
-            -build-all (optional, builds all packages)
-            -clean=node_modules (optional, deletes the node_modules folder before installing)
-            -install (optional, executes: npm install before compiling)
-            -publish (optional, executes: npm publish in the dist folder)`);
+    -package=sample-package (optional, builds sample-package and it\'s dependencies)
+    -build-all (optional, builds all packages)
+    -clean=node_modules (optional, deletes the node_modules folder before installing)
+    -install (optional, executes: npm install before compiling)
+    -publish (optional, executes: npm publish in the dist folder)`);
+        process.exit(0);
     }
 });
 

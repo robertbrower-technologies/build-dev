@@ -4,7 +4,7 @@ var buildPackage = function(package, packages, buildCallback, clean, install, pu
         console.log(`Building ${pkg.package.name}...`);
         if (pkg.package.dependencies) {
             var dependencies = Object.keys(pkg.package.dependencies);
-            console.log(`Building ${dependencies.length} ${pkg.package.name} dependencies...`);
+            console.log(`Found ${dependencies.length} ${pkg.package.name} ${dependencies.length == 1 ? 'dependency' : 'dependencies'}...`);
             dependencies.forEach(dependency => {
                 if (packages[dependency]) {
                     if (packages[dependency].build) {

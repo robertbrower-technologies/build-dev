@@ -1,4 +1,4 @@
-var runBuildMenu = function(packages, buildAllCallback, buildPackageCallback) {
+var runBuildMenu = function(packages, buildAllCallback, buildPackageCallback, clean, install, publish) {
     var width = process.stdout.columns - 4;
     var menu = require('terminal-menu')({width: width, x: 0, y: 0});
     menu.reset();
@@ -15,10 +15,10 @@ var runBuildMenu = function(packages, buildAllCallback, buildPackageCallback) {
             process.exit(0);
         } else if (label == 'BUILD ALL') {
             menu.close();
-            buildAllCallback(packages);
+            buildAllCallback(packages, clean, install, publish);
         } else {
             menu.close();
-            buildPackageCallback(label, packages);
+            buildPackageCallback(label, packages, clean, install, publish);
         }
     });
     process.stdin.pipe(menu.createStream()).pipe(process.stdout);
